@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
+import TodoButton from './TodoButton';
 
-function TodoInput({ handleAddTask }) {
+function TodoInput() {
 	const [text, setText] = useState('');
 
 	function submitTask(e) {
 		e.preventDefault();
-		handleAddTask(text);
+		console.log(`submit task text - ${text}`);
 		setText('');
 	}
 
@@ -25,12 +26,9 @@ function TodoInput({ handleAddTask }) {
 					onChange={(e) => setText(e.target.value)}
 				/>
 			</div>
-			<button
-				className="block border py-1 px-3 h-8 border-black bg-green-500 text-white"
-				type="submit"
-			>
+			<TodoButton type='submit' view='accent' size='medium'>
 				Submit
-			</button>
+			</TodoButton>
 		</form>
 	);
 }
