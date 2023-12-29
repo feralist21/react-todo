@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 function Container({ children }) {
-	return <div className="container mx-auto px-4">{children}</div>;
+    return <div className="container mx-auto px-4">{children}</div>;
 }
 
 export default Container;
