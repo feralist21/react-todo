@@ -26,7 +26,7 @@ function TodoInput() {
                     onChange={(e) => setText(e.target.value)}
                 />
             </div>
-            <TodoButton type="submit" view="accent" size="medium">
+            <TodoButton className="text-xs" type="submit" view="accent" size="medium">
                 Submit
             </TodoButton>
         </form>

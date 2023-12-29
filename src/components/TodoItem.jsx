@@ -1,11 +1,21 @@
+import { useState } from 'react';
+import TodoButton from './TodoButton';
+import TodoCheckbox from './TodoCheckbox';
+
 function TodoItem() {
+    const [value, setCheckbox] = useState(false);
+
     return (
         <div className="flex gap-x-4">
-            <input className="block w-6 h-6" type="checkbox" name="checlbox" id="checlbox" />
+            <TodoCheckbox
+                value={value}
+                checked={value}
+                onChange={() => setCheckbox(!value)}
+            />
             <p>Текст задачи</p>
-            <button className="block border border-black w-6 h-6" type="button">
-                X
-            </button>
+            <TodoButton className="text-xs" view="accent" size="small">
+                Х
+            </TodoButton>
         </div>
     );
 }
