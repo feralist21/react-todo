@@ -2,17 +2,17 @@
 import { useState } from 'react';
 import TodoButton from './TodoButton';
 
-function TodoInput() {
+function TodoInput({onSubmit}) {
     const [text, setText] = useState('');
 
-    function submitTask(e) {
+    function addTodoItem(e) {
         e.preventDefault();
-        console.log(`submit task text - ${text}`);
+        onSubmit(text);
         setText('');
     }
 
     return (
-        <form className="w-full flex gap-x-4 items-end" onSubmit={submitTask}>
+        <form className="w-full flex gap-x-4 items-end" onSubmit={addTodoItem}>
             <div className="w-auto flex-grow">
                 <label className="block" htmlFor="text">
                     Add task
