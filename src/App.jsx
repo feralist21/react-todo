@@ -4,19 +4,20 @@ import TodoInput from './components/TotoInput';
 
 function App() {
     const [list, setList] = useState([]);
+    const [completedList, setcompletedList] = useState([]);
 
     function handlerTodoList(todo) {
-        setList(
-            [
-                ...list,
-                todo
-            ]
-        )
+        setList([...list, todo]);
     }
 
-    const todoList = list.map((todo, index) => {
-        return <TodoItem key={index} label={todo} />
-    });
+    function deleteTodoItem(todoName) {
+        setList(list.filter((todo) => todo !== todoName));
+    }
+
+    function completedTodoItem(value) {
+        deleteTodoItem(value);
+        setcompletedList([...completedList, value]);
+    }
 
     return (
         <>
@@ -26,11 +27,22 @@ function App() {
                     <TodoInput onSubmit={handlerTodoList} />
                     <div className="flex flex-col gap-y-4">
                         <h2 className="text-xl">Todo list</h2>
-                        {todoList}
+                        {list.map((todo, index) => (
+                            <TodoItem
+                                key={index}
+                                label={todo}
+                                onDelete={deleteTodoItem}
+                                handlerComplete={completedTodoItem}
+                                isComplete={false}
+                            />
+                        ))}
                     </div>
                     <div className="flex flex-col gap-y-4">
                         <h2 className="text-xl">Complete list</h2>
                         <div className="flex flex-col gap-y-4">
+                            {completedList.map((todo, index) => (
+                                <TodoItem key={index} label={todo} isComplete={true} />
+                            ))}
                         </div>
                     </div>
                 </div>

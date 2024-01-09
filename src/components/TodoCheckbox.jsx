@@ -2,7 +2,6 @@
 import { clsx } from 'clsx';
 
 function TodoCheckbox({ className, value, checked, onChange, disabled, ...attr }) {
-
     return (
         <input
             className={clsx(className, 'block w-6 h-6')}

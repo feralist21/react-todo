@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import TodoButton from './TodoButton';
 
-function TodoInput({onSubmit}) {
+function TodoInput({ onSubmit }) {
     const [text, setText] = useState('');
 
     function addTodoItem(e) {
