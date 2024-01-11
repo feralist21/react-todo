@@ -13,12 +13,12 @@ export default function TodoButton({
     return (
         <>
             <button
-                className={clsx(className, {
-                    'bg-green-500 text-white': view === 'accent',
+                className={clsx(className, 'font-normal rounded-md', {
+                    'bg-violet-600 text-white hover:bg-violet-700': view === 'accent',
                     'bg-white border border-gray-500': view === 'stroke',
-                    'py-3 px-4': size === 'medium',
-                    'py-5 px-6': size === 'big',
-                    'py-1 px-2': size === 'small',
+                    'py-1 px-1 text-xs': size === 'small',
+                    'py-2 px-2 text-base': size === 'medium',
+                    'py-3 px-3 text-lg': size === 'big',
                 })}
                 type={type}
                 onClick={onClick}
