@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import TodoButton from './TodoButton';
-import TodoCheckbox from './TodoCheckbox';
-import CloseIco from '../assets/close.svg?react';
-import EditIco from '../assets/edit.svg?react';
+import TodoButton from '@/TodoButton';
+import TodoCheckbox from '@/TodoCheckbox';
+import CloseIco from '~/src/assets/close.svg?react';
+import EditIco from '~/src/assets/edit.svg?react';
 
 function TodoItem({ label, onDelete, isComplete, handlerComplete }) {
     const [value, setCheckbox] = useState(false);

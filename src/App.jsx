@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import TodoItem from './components/TodoItem';
-import TodoButton from './components/TodoButton';
+import TodoItem from '@/TodoItem';
+import TodoButton from '@/TodoButton';
 
 function App() {
     const [list, setList] = useState(['first task', 'second task']);
